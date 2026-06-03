@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ARKOS Header - Editable HTML/CSS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="editable.css" />
+  <link rel="stylesheet" href="hero-slider.css" />
+  <link rel="stylesheet" href="products-section.css" />
+  <link rel="stylesheet" href="footer.css" />
+</head>
+<body>
+  <div class="debug-tools" aria-label="Debug tools">
+    <button class="debug-toggle-slider" type="button" aria-pressed="false" hidden>Hide slider</button>
+    <button data-debug-layer="header-box" type="button" aria-pressed="false">Header box</button>
+    <button data-debug-layer="header-bg" type="button" aria-pressed="false">Header bg</button>
+    <button data-debug-layer="accents" type="button" aria-pressed="false">Accents</button>
+    <button data-debug-layer="menu" type="button" aria-pressed="false">Menu</button>
+    <button data-debug-layer="dividers" type="button" aria-pressed="false">Dividers</button>
+    <button data-debug-layer="mini-lines" type="button" aria-pressed="false">Icon lines</button>
+    <button data-debug-layer="logo" type="button" aria-pressed="false">Logo</button>
+    <button data-debug-layer="search" type="button" aria-pressed="false">Search</button>
+    <div class="logo-controls" aria-label="Logo controls" hidden>
+      <label>
+        <span>Scale</span>
+        <input data-logo-control="scale" type="range" min="0.70" max="1.35" step="0.01" value="1" />
+        <output data-logo-output="scale">1.00</output>
+      </label>
+      <label>
+        <span>Height</span>
+        <input data-logo-control="height" type="range" min="70" max="105" step="0.1" value="81.8" />
+        <output data-logo-output="height">81.8%</output>
+      </label>
+      <label>
+        <span>X</span>
+        <input data-logo-control="x" type="range" min="-80" max="80" step="1" value="0" />
+        <output data-logo-output="x">0px</output>
+      </label>
+      <label>
+        <span>Y</span>
+        <input data-logo-control="y" type="range" min="-40" max="40" step="1" value="0" />
+        <output data-logo-output="y">0px</output>
+      </label>
+      <div class="logo-readout" data-logo-readout>Logo height: --</div>
+      <button class="logo-reset" type="button">Reset logo</button>
+    </div>
+  </div>
+
+  <main class="option-screen">
+    <header class="arkos-header" aria-label="ARKOS website header">
+      <span class="header-bg" aria-hidden="true"></span>
+      <span class="header-tail-bg" aria-hidden="true"></span>
+      <span class="accent-line red top-left"></span>
+      <span class="accent-line red bottom-left"></span>
+      <span class="accent-line yellow top-right"></span>
+      <span class="accent-line yellow bottom-right"></span>
+
+      <nav class="main-nav nav-left" aria-label="Primary navigation left">
+        <div class="nav-item">
+          <a href="https://arkos.in/" class="nav-link home-link" aria-label="Home">
+            <img class="nav-icon" src="assets/nav-icons/home.svg" alt="" aria-hidden="true" />
+            <span class="mini-line red"></span>
+            <span>Home</span>
+          </a>
+        </div>
+
+        <div class="nav-item has-dropdown">
+          <a href="https://arkos.in/about-us/" class="nav-link" aria-haspopup="true" aria-expanded="false">
+            <img class="nav-icon" src="assets/nav-icons/about-us.svg" alt="" aria-hidden="true" />
+            <span class="mini-line red"></span>
+            <span class="nav-label">About Us <i class="dropdown-caret fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+          </a>
+          <div class="nav-dropdown" role="menu" aria-label="About us submenu">
+            <a href="https://arkos.in/about-us/" role="menuitem">About Us Overview</a>
+            <a href="https://arkos.in/about-us/company-introduction/" role="menuitem">Company Introduction</a>
+            <a href="https://arkos.in/about-us/logo-description/" role="menuitem">Logo Description</a>
+            <a href="https://arkos.in/about-us/mission-vision/" role="menuitem">Mission - Vision</a>
+            <a href="https://arkos.in/about-us/executive-team/" role="menuitem">Executive Team</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="https://arkos.in/manufacturing-facility/" class="nav-link nav-wide">
+            <img class="nav-icon" src="assets/nav-icons/manufacturing-facility.svg" alt="" aria-hidden="true" />
+            <span class="mini-line red"></span>
+            <span>Manufacturing Facility</span>
+          </a>
+        </div>
+
+        <div class="nav-item has-dropdown">
+          <a href="https://arkos.in/product-finder/" class="nav-link nav-medium" aria-haspopup="true" aria-expanded="false">
+            <img class="nav-icon" src="assets/nav-icons/business-divisions.svg" alt="" aria-hidden="true" />
+            <span class="mini-line red"></span>
+            <span class="nav-label">Business Divisions <i class="dropdown-caret fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+          </a>
+          <div class="nav-dropdown nav-dropdown--mega" role="menu" aria-label="Business divisions submenu">
+            <section class="dropdown-group" aria-label="ARKOS Lubricants">
+              <h3>ARKOS Lubricants</h3>
+              <a href="https://arkos.in/motorcycle-oils/" role="menuitem">Motorcycle Oils</a>
+              <a href="https://arkos.in/3-wheeler-engine-oils/" role="menuitem">3 Wheeler Engine Oils</a>
+              <a href="https://arkos.in/passenger-car-motor-oils/" role="menuitem">Passenger Car Motor Oils</a>
+              <a href="https://arkos.in/diesel-engine-oils/" role="menuitem">Diesel Engine Oils</a>
+              <a href="https://arkos.in/tractor-engine-oils/" role="menuitem">Tractor Engine Oils</a>
+              <a href="https://arkos.in/gear-transmission-oils/" role="menuitem">Gear &amp; Transmission Oils</a>
+              <a href="https://arkos.in/grease-pumpset-oils/" role="menuitem">Grease &amp; Pumpset Oils</a>
+              <a href="https://arkos.in/gas-engine-oils/" role="menuitem">Gas Engine Oils</a>
+              <a href="https://arkos.in/industrial-oils/" role="menuitem">Industrial Oils</a>
+            </section>
+            <section class="dropdown-group" aria-label="BOLT Batteries">
+              <h3>BOLT Batteries</h3>
+              <a href="https://arkos.in/product-finder/" role="menuitem">Product Finder</a>
+              <a href="https://arkos.in/2-wheeler-batteries/" role="menuitem">2 Wheeler Batteries</a>
+              <a href="https://arkos.in/2-wheeler-batteries/ab-mf-2-5/" role="menuitem">AB MF 2.5</a>
+              <a href="https://arkos.in/2-wheeler-batteries/ab-mf-5/" role="menuitem">AB MF 5</a>
+              <a href="https://arkos.in/2-wheeler-batteries/ab-mf-7/" role="menuitem">AB MF 7</a>
+              <a href="https://arkos.in/2-wheeler-batteries/ab-mf-9/" role="menuitem">AB MF 9</a>
+              <a href="https://arkos.in/2-wheeler-batteries/ab-mf-z4/" role="menuitem">AB MF Z4</a>
+              <a href="https://arkos.in/2-wheeler-batteries/ab-mf-z5/" role="menuitem">AB MF Z5</a>
+              <a href="https://wms.arkos.in/login" role="menuitem">Bolt Warranty System</a>
+            </section>
+            <section class="dropdown-group" aria-label="Arkos Gripp Tyre">
+              <h3>Arkos Gripp Tyre</h3>
+              <a href="https://arkos.in/tyre-product-finder/" role="menuitem">Tyre Product Finder</a>
+              <a href="https://arkos.in/go/" role="menuitem">Arkos Gripp Go</a>
+              <a href="https://arkos.in/eva/" role="menuitem">Arkos Gripp Eva</a>
+              <a href="https://arkos.in/boss/" role="menuitem">Arkos Gripp Boss</a>
+            </section>
+            <section class="dropdown-group" aria-label="VETEK">
+              <h3>VETEK</h3>
+              <a href="https://arkos.in/vetek/" role="menuitem">VETEK Range</a>
+              <a href="https://arkos.in/arkos_products/chain-cleaner-spray/" role="menuitem">Chain Cleaner Spray</a>
+              <a href="https://arkos.in/arkos_products/chain-lube/" role="menuitem">Chain Lube</a>
+              <a href="https://arkos.in/arkos_products/rust-off/" role="menuitem">Rust Off</a>
+              <a href="https://arkos.in/arkos_products/throttle-body-cleaner/" role="menuitem">Throttle Body Cleaner</a>
+              <a href="https://arkos.in/arkos_products/screen-wash/" role="menuitem">Screen Wash</a>
+              <a href="https://arkos.in/arkos_products/insta-polish/" role="menuitem">Insta Polish</a>
+            </section>
+          </div>
+        </div>
+      </nav>
+
+      <a href="#" class="brand-panel" aria-label="ARKOS home">
+        <img src="assets/arkos-center-panel.png" alt="ARKOS" />
+      </a>
+
+      <nav class="main-nav nav-right" aria-label="Primary navigation right">
+        <div class="nav-item has-dropdown">
+          <a href="https://arkos.in/downloads/" class="nav-link" aria-haspopup="true" aria-expanded="false">
+            <img class="nav-icon" src="assets/nav-icons/downloads.svg" alt="" aria-hidden="true" />
+            <span class="mini-line yellow"></span>
+            <span class="nav-label">Downloads <i class="dropdown-caret fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+          </a>
+          <div class="nav-dropdown nav-dropdown--right" role="menu" aria-label="Downloads submenu">
+            <a href="https://arkos.in/downloads/" role="menuitem">Downloads Overview</a>
+            <a href="https://arkos.in/brochure/" role="menuitem">Brochure</a>
+            <a href="https://arkos.in/product-films/" role="menuitem">Product Films</a>
+            <a href="https://arkos.in/test-certificates/" role="menuitem">Test Certificates</a>
+            <a href="https://arkos.in/product-data-sheets-2/" role="menuitem">Product Data Sheets</a>
+            <a href="https://arkos.in/approvals/" role="menuitem">Approvals</a>
+            <a href="https://arkos.in/marcom-materials/" role="menuitem">Marcom Materials</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="https://arkos.in/careers/" class="nav-link">
+            <img class="nav-icon" src="assets/nav-icons/careers.svg" alt="" aria-hidden="true" />
+            <span class="mini-line yellow"></span>
+            <span>Careers</span>
+          </a>
+        </div>
+
+        <div class="nav-item">
+          <a href="https://arkos.in/blogs/" class="nav-link">
+            <img class="nav-icon" src="assets/nav-icons/blogs.svg" alt="" aria-hidden="true" />
+            <span class="mini-line yellow"></span>
+            <span>Blogs</span>
+          </a>
+        </div>
+
+        <div class="nav-item">
+          <a href="https://arkos.in/contact-us/" class="nav-link">
+            <img class="nav-icon" src="assets/nav-icons/contact-us.svg" alt="" aria-hidden="true" />
+            <span class="mini-line yellow"></span>
+            <span>Contact Us</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="utility">
+        <button class="search-button" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+
+    <div id="hero-slider-mount" data-component="hero-slider.html"></div>
+
+    <section class="products-section" aria-labelledby="products-title">
+      <div class="products-section__shell">
+        <aside class="products-intro">
+          <img class="products-intro__logo" src="assets/products-section/arkos-logo-shield.png" alt="ARKOS" />
+
+          <div class="products-kicker">
+            <span>Product Range</span>
+          </div>
+
+          <h2 id="products-title">Solutions <span>For Every Ride</span></h2>
+
+          <p>
+            Engineered for performance. Built for reliability. Discover our complete range of high-quality products trusted by professionals and everyday riders alike.
+          </p>
+
+          <ul class="product-proof-list" aria-label="Product quality highlights">
+            <li>
+              <span class="proof-icon proof-icon--shield" aria-hidden="true"></span>
+              <strong>Trusted Quality</strong>
+              <small>Tested. Proven. Reliable.</small>
+            </li>
+            <li>
+              <span class="proof-icon proof-icon--performance" aria-hidden="true"></span>
+              <strong>Performance Driven</strong>
+              <small>Engineered for real-world conditions.</small>
+            </li>
+            <li>
+              <span class="proof-icon proof-icon--compatibility" aria-hidden="true"></span>
+              <strong>Wider Compatibility</strong>
+              <small>For every engine. Every ride.</small>
+            </li>
+            <li>
+              <span class="proof-icon proof-icon--protect" aria-hidden="true"></span>
+              <strong>Built To Protect</strong>
+              <small>Longer life. Better performance.</small>
+            </li>
+          </ul>
+        </aside>
+
+        <div class="product-range-grid" aria-label="ARKOS product categories">
+          <article class="product-card product-card--lubricants">
+            <span class="product-card__number">01</span>
+            <div class="product-card__visual">
+              <img src="assets/products-section/arkos-blitz-4t-10w30-engine-oil.png" alt="ARKOS Blitz 4T 10W-30 engine oil" />
+            </div>
+            <h3>Arkos <span>Lubricants</span></h3>
+            <p>High-performance engine oils and lubricants built to deliver superior protection, power, and efficiency in every ride.</p>
+            <a href="#" class="product-card__cta">Explore Lubricants <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="product-card product-card--batteries">
+            <span class="product-card__number">02</span>
+            <div class="product-card__visual">
+              <img src="assets/products-section/arkos-bolt-premium-batteries.png" alt="ARKOS Bolt premium battery" />
+            </div>
+            <h3>Bolt <span>Batteries</span></h3>
+            <p>Reliable starting power and long-lasting performance for all weather conditions and every journey.</p>
+            <a href="#" class="product-card__cta">Explore Batteries <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="product-card product-card--tyres">
+            <span class="product-card__number">03</span>
+            <div class="product-card__visual">
+              <img src="assets/products-section/arkos-gripp-two-wheeler-tyre.png" alt="ARKOS Gripp two-wheeler tyre" />
+            </div>
+            <h3>Arkos <span>Gripp Tyre</span></h3>
+            <p>Precision-engineered tyres for maximum grip, durability, and control on every road, in every condition.</p>
+            <a href="#" class="product-card__cta">Explore Tyres <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="product-card product-card--autocare">
+            <span class="product-card__number">04</span>
+            <div class="product-card__visual">
+              <img src="assets/products-section/vetek-auto-care-range.png" alt="Vetek auto care product range" />
+            </div>
+            <h3>Vetek <span>Auto Care</span></h3>
+            <p>Advanced care solutions that clean, protect, and enhance inside out. Because every detail matters.</p>
+            <a href="#" class="product-card__cta">Explore Auto Care <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+          </article>
+        </div>
+
+        <p class="products-section__tagline">Powering <span>Performance</span>. Protecting <em>Every Journey</em>.</p>
+      </div>
+    </section>
+
+    <div id="footer-mount" data-component="footer.html"></div>
+  </main>
+
+  <script src="hero-slider.js"></script>
+  <script src="editable.js"></script>
+</body>
+</html>

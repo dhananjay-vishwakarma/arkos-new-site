@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #ffffff;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*
+  Pixel-matched version:
+  - Keeps the original artwork ratio: 2048 × 682.
+  - Use this file when you need the header to look exactly like the supplied image.
+*/
+.pixel-stage {
+  position: relative;
+  width: min(100vw, 2048px);
+  aspect-ratio: 2048 / 682;
+  margin: 0 auto;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.reference-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.hotspot {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: -9999px;
+  border-radius: 8px;
+}
+
+.hotspot:focus-visible {
+  outline: 3px solid #f2d30a;
+  outline-offset: 2px;
+  background: rgba(242, 211, 10, 0.12);
+}
+
+/* Hotspot positions are percentages of the original 2048 × 682 artwork. */
+.hotspot-home {
+  left: 2.2%;
+  top: 43%;
+  width: 4.2%;
+  height: 14.5%;
+}
+
+.hotspot-about {
+  left: 8.1%;
+  top: 42.5%;
+  width: 6.9%;
+  height: 15.2%;
+}
+
+.hotspot-facility {
+  left: 15.6%;
+  top: 42.5%;
+  width: 12.3%;
+  height: 15.2%;
+}
+
+.hotspot-divisions {
+  left: 28.0%;
+  top: 42.5%;
+  width: 11.0%;
+  height: 15.2%;
+}
+
+.hotspot-downloads {
+  left: 58.1%;
+  top: 42.5%;
+  width: 7.3%;
+  height: 15.2%;
+}
+
+.hotspot-careers {
+  left: 66.3%;
+  top: 42.5%;
+  width: 5.6%;
+  height: 15.2%;
+}
+
+.hotspot-blogs {
+  left: 72.4%;
+  top: 42.5%;
+  width: 5.3%;
+  height: 15.2%;
+}
+
+.hotspot-contact {
+  left: 78.4%;
+  top: 42.5%;
+  width: 7.3%;
+  height: 15.2%;
+}
+
+.hotspot-search {
+  left: 86.0%;
+  top: 42.6%;
+  width: 4.0%;
+  height: 15.0%;
+}
+
+.hotspot-phone {
+  left: 90.1%;
+  top: 42.2%;
+  width: 9.1%;
+  height: 15.6%;
+}

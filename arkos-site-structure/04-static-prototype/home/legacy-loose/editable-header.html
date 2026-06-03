@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ARKOS Header - Editable HTML/CSS</title>
+  <link rel="stylesheet" href="editable.css" />
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="icon-home" viewBox="0 0 48 48">
+      <path d="M6 24.5 24 9l18 15.5" />
+      <path d="M11 23v19h10V30h6v12h10V23" />
+    </symbol>
+    <symbol id="icon-people" viewBox="0 0 48 48">
+      <circle cx="24" cy="16" r="6.5" />
+      <circle cx="13.5" cy="19" r="5" />
+      <circle cx="34.5" cy="19" r="5" />
+      <path d="M11 39c1.2-7.2 6-11 13-11s11.8 3.8 13 11" />
+      <path d="M4.5 37c1.1-5.2 4.3-8.1 9.6-8.4" />
+      <path d="M43.5 37c-1.1-5.2-4.3-8.1-9.6-8.4" />
+    </symbol>
+    <symbol id="icon-factory" viewBox="0 0 48 48">
+      <path d="M8 40V18l8 5v-9l9 6v20" />
+      <path d="M25 40h15V24l-15-8" />
+      <path d="M31 12c-3-4 5-4 2-8" />
+      <path d="M13 31h5m4 0h5m4 0h5M13 37h5m4 0h5m4 0h5" />
+    </symbol>
+    <symbol id="icon-briefcase" viewBox="0 0 48 48">
+      <rect x="8" y="14" width="32" height="24" rx="2.5" />
+      <path d="M18 14v-4h12v4M8 24h32" />
+      <path d="M21 24v4h6v-4" />
+    </symbol>
+    <symbol id="icon-download" viewBox="0 0 48 48">
+      <path d="M15 35H13a9 9 0 0 1 0-18 12 12 0 0 1 23-3 8.5 8.5 0 0 1-1 17h-2" />
+      <path d="M24 18v20" />
+      <path d="m16 30 8 8 8-8" />
+    </symbol>
+    <symbol id="icon-career" viewBox="0 0 48 48">
+      <circle cx="24" cy="13" r="6.5" />
+      <path d="M13 41c.8-9.2 5-14 11-14s10.2 4.8 11 14" />
+      <path d="m20 27 4 6 4-6" />
+      <path d="M24 33v8" />
+    </symbol>
+    <symbol id="icon-blog" viewBox="0 0 48 48">
+      <path d="M13 7h19l7 7v27H13z" />
+      <path d="M32 7v9h7" />
+      <path d="M18 22h15M18 28h15M18 34h10" />
+    </symbol>
+    <symbol id="icon-envelope" viewBox="0 0 48 48">
+      <rect x="7" y="12" width="34" height="24" rx="2.5" />
+      <path d="m9 15 15 13 15-13" />
+      <path d="m8.5 34 11.5-10M39.5 34 28 24" />
+    </symbol>
+    <symbol id="icon-search" viewBox="0 0 48 48">
+      <circle cx="21" cy="21" r="12" />
+      <path d="m31 31 11 11" />
+    </symbol>
+    <symbol id="icon-phone" viewBox="0 0 48 48">
+      <path d="M18 6 10 10c1.2 16.4 11.6 26.8 28 28l4-8-10-5-4 5c-5.2-2.1-8.9-5.8-11-11l5-4z" />
+    </symbol>
+  </svg>
+
+  <main class="option-screen">
+    <div class="option-label">Option 3</div>
+
+    <header class="arkos-header" aria-label="ARKOS website header">
+      <span class="accent-line red top-left"></span>
+      <span class="accent-line red bottom-left"></span>
+      <span class="accent-line yellow top-right"></span>
+      <span class="accent-line yellow bottom-right"></span>
+
+      <nav class="main-nav nav-left" aria-label="Primary navigation left">
+        <a href="#" class="nav-link home-link" aria-label="Home">
+          <svg><use href="#icon-home"></use></svg>
+          <span class="mini-line red"></span>
+        </a>
+
+        <a href="#" class="nav-link">
+          <svg><use href="#icon-people"></use></svg>
+          <span class="mini-line red"></span>
+          <span>About us</span>
+        </a>
+
+        <a href="#" class="nav-link nav-wide">
+          <svg><use href="#icon-factory"></use></svg>
+          <span class="mini-line red"></span>
+          <span>Manufacturing Facility</span>
+        </a>
+
+        <a href="#" class="nav-link nav-medium">
+          <svg><use href="#icon-briefcase"></use></svg>
+          <span class="mini-line red"></span>
+          <span>Business Divisions</span>
+        </a>
+      </nav>
+
+      <a href="#" class="brand-panel" aria-label="ARKOS home">
+        <img src="assets/arkos-center-panel.png" alt="ARKOS" />
+      </a>
+
+      <nav class="main-nav nav-right" aria-label="Primary navigation right">
+        <a href="#" class="nav-link">
+          <svg><use href="#icon-download"></use></svg>
+          <span class="mini-line yellow"></span>
+          <span>Downloads</span>
+        </a>
+
+        <a href="#" class="nav-link">
+          <svg><use href="#icon-career"></use></svg>
+          <span class="mini-line yellow"></span>
+          <span>Careers</span>
+        </a>
+
+        <a href="#" class="nav-link">
+          <svg><use href="#icon-blog"></use></svg>
+          <span class="mini-line yellow"></span>
+          <span>Blogs</span>
+        </a>
+
+        <a href="#" class="nav-link">
+          <svg><use href="#icon-envelope"></use></svg>
+          <span class="mini-line yellow"></span>
+          <span>Contact us</span>
+        </a>
+      </nav>
+
+      <div class="utility">
+        <button class="search-button" aria-label="Search">
+          <svg><use href="#icon-search"></use></svg>
+        </button>
+
+        <a class="phone-link" href="tel:18003133070">
+          <svg><use href="#icon-phone"></use></svg>
+          <span>
+            <strong>1800 313 3070</strong>
+            <em>Mon - Sat: 9AM - 6PM</em>
+          </span>
+        </a>
+      </div>
+    </header>
+  </main>
+</body>
+</html>

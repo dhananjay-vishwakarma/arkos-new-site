@@ -1,0 +1,12 @@
+.playwright-mcp/
+node_modules/
+dist/
+build/
+.next/
+.vite/
+.cache/
+.env
+.env.*
+*.log
+Thumbs.db
+desktop.ini
