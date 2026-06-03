@@ -1,7 +1,7 @@
 :root {
   --logo-base-height: 81.8%;
   --logo-offset-x: 0px;
-  --logo-offset-y: 0px;
+  --logo-offset-y: 12px;
   --logo-scale: 1;
 }
 
@@ -74,6 +74,10 @@ body {
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.22);
   background: rgba(0, 0, 0, 0.78);
+}
+
+.logo-controls[hidden] {
+  display: none;
 }
 
 .logo-controls label {

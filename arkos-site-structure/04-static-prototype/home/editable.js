@@ -15,10 +15,10 @@ const logoDefaults = {
   scale: "1",
   height: "81.8",
   x: "0",
-  y: "0",
+  y: "12",
 };
 
-const logoStorageKey = "arkosLogoControls";
+const logoStorageKey = "arkosLogoControlsV2";
 
 let heroController;
 const dropdownCloseTimers = new WeakMap();

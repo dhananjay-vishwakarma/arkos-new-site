@@ -5,28 +5,28 @@
   --product-muted: rgba(255, 255, 255, 0.72);
   position: relative;
   z-index: 1;
-  padding: clamp(34px, 4vw, 78px) clamp(16px, 2.5vw, 48px);
+  padding: clamp(52px, 4vw, 64px) clamp(24px, 1.9vw, 34px);
   background:
-    radial-gradient(circle at 50% 0, rgba(255, 255, 255, 0.08), transparent 26%),
-    linear-gradient(180deg, #060606, #111 52%, #060606);
+    radial-gradient(circle at 50% 0, rgba(255, 255, 255, 0.9), transparent 34%),
+    linear-gradient(180deg, #f0f0f0, #e7e7e7);
 }
 
 .products-section__shell {
   position: relative;
-  width: min(100%, 1880px);
-  min-height: clamp(650px, 48vw, 940px);
+  width: min(100%, 1390px);
+  min-height: clamp(760px, 60.7vw, 890px);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(280px, 28%) 1fr;
+  grid-template-columns: minmax(340px, 25.5%) minmax(0, 1fr);
   overflow: hidden;
   color: var(--product-ink);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(0, 0, 0, 0.55);
   border-radius: 6px;
   background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.96) 0 29%, rgba(0, 0, 0, 0.7) 42%, rgba(0, 0, 0, 0.4)),
-    url("assets/products-section/products-mechanical-bg.png") left center / 48% auto no-repeat,
+    linear-gradient(90deg, rgba(0, 0, 0, 0.98) 0 24%, rgba(0, 0, 0, 0.88) 36%, rgba(0, 0, 0, 0.36)),
+    url("assets/products-section/products-mechanical-bg.png") left center / 52% auto no-repeat,
     #080808;
-  box-shadow: 0 28px 52px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 24px 46px rgba(0, 0, 0, 0.36);
 }
 
 .products-section__shell::before {
@@ -35,8 +35,10 @@
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(105deg, transparent 0 23%, rgba(236, 20, 34, 0.95) 23.1% 23.35%, transparent 23.45%),
-    linear-gradient(90deg, transparent 0 88%, rgba(240, 212, 18, 0.78) 88.2% 88.8%, transparent 89%);
+    linear-gradient(104deg, transparent 0 26.2%, rgba(236, 20, 34, 0.95) 26.3% 26.65%, transparent 26.75%),
+    linear-gradient(103deg, transparent 0 29.3%, rgba(236, 20, 34, 0.28) 29.4% 29.65%, transparent 29.75%),
+    linear-gradient(101deg, transparent 0 88.9%, rgba(236, 20, 34, 0.52) 89% 89.12%, transparent 89.25%),
+    linear-gradient(101deg, transparent 0 94.4%, rgba(240, 212, 18, 0.92) 94.55% 95.55%, transparent 95.7%);
   opacity: 0.95;
 }
 
@@ -55,33 +57,33 @@
 .products-intro {
   position: relative;
   z-index: 2;
-  padding: clamp(34px, 4vw, 78px) clamp(30px, 3.2vw, 70px);
+  padding: clamp(34px, 3.4vw, 58px) clamp(24px, 2vw, 38px) clamp(34px, 3.4vw, 58px) clamp(42px, 3.2vw, 58px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .products-intro__logo {
-  width: clamp(54px, 4.7vw, 92px);
+  width: clamp(46px, 3.6vw, 68px);
   height: auto;
-  margin-bottom: clamp(28px, 2.6vw, 52px);
+  margin-bottom: clamp(24px, 2vw, 36px);
   object-fit: contain;
 }
 
 .products-kicker {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   color: var(--product-yellow);
-  font-size: clamp(11px, 0.85vw, 17px);
+  font-size: clamp(10px, 0.72vw, 14px);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
 .products-kicker::after {
   content: "";
-  width: clamp(70px, 6vw, 122px);
+  width: clamp(64px, 5vw, 92px);
   height: 1px;
   background: linear-gradient(90deg, var(--product-yellow), transparent);
 }
@@ -96,11 +98,11 @@
 }
 
 .products-intro h2 {
-  max-width: 430px;
+  max-width: 360px;
   margin: clamp(18px, 1.8vw, 34px) 0 clamp(16px, 1.6vw, 28px);
   color: #ffffff;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: clamp(42px, 4.2vw, 86px);
+  font-size: clamp(40px, 3.2vw, 58px);
   font-style: italic;
   font-weight: 900;
   line-height: 0.98;
@@ -111,28 +113,40 @@
 .products-intro h2 span {
   display: block;
   color: var(--product-red);
+  white-space: nowrap;
 }
 
 .products-intro p {
-  max-width: 390px;
+  max-width: 330px;
   margin: 0 0 clamp(28px, 3vw, 60px);
-  color: var(--product-muted);
-  font-size: clamp(13px, 0.95vw, 18px);
+  color: rgba(255, 255, 255, 0.84);
+  font-size: clamp(12px, 0.82vw, 15px);
   line-height: 1.55;
+}
+
+.products-intro p::after {
+  content: "";
+  display: block;
+  width: 170px;
+  height: 14px;
+  margin-top: 18px;
+  background:
+    repeating-linear-gradient(110deg, rgba(255, 255, 255, 0.45) 0 2px, transparent 2px 9px),
+    linear-gradient(90deg, transparent 0 72%, rgba(255, 255, 255, 0.18) 72%);
 }
 
 .product-proof-list {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: clamp(16px, 1.35vw, 28px);
+  gap: clamp(14px, 1.15vw, 22px);
   list-style: none;
 }
 
 .product-proof-list li {
   display: grid;
-  grid-template-columns: 42px 1fr;
-  column-gap: 16px;
+  grid-template-columns: 34px 1fr;
+  column-gap: 14px;
   align-items: center;
 }
 
@@ -158,11 +172,11 @@
 
 .proof-icon {
   grid-row: 1 / span 2;
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
   display: block;
   background: url("assets/products-section/product-feature-icons.png") 0 0 / 250px 250px no-repeat;
-  filter: drop-shadow(0 0 10px rgba(240, 212, 18, 0.28));
+  filter: drop-shadow(0 0 6px rgba(240, 212, 18, 0.22));
 }
 
 .proof-icon--shield {
@@ -188,24 +202,48 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: stretch;
-  padding: clamp(44px, 4.5vw, 88px) clamp(24px, 3vw, 60px) clamp(86px, 6vw, 126px) 0;
+  padding: clamp(54px, 3.9vw, 60px) clamp(18px, 1.8vw, 26px) clamp(66px, 4.8vw, 76px) 0;
+  isolation: isolate;
+}
+
+.product-range-grid::before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  left: clamp(-78px, -4.1vw, -44px);
+  top: clamp(38px, 3vw, 58px);
+  bottom: clamp(70px, 5vw, 100px);
+  width: clamp(170px, 12vw, 238px);
+  pointer-events: none;
+  background:
+    linear-gradient(108deg, transparent 0 47%, var(--product-red) 47.2% 49.2%, transparent 49.5%),
+    linear-gradient(108deg, transparent 0 58%, rgba(236, 20, 34, 0.72) 58.2% 60.2%, transparent 60.5%);
 }
 
 .product-card {
   --card-accent: var(--product-red);
   --card-bg: url("assets/products-section/lubricants-red-oil-bg.png");
+  --card-bg-position: center;
+  --clip-left: 20%;
+  --clip-right-bottom: 83%;
+  --tab-left: 18%;
+  --number-left: 26%;
+  --arrow-left: clamp(54px, 4.6vw, 90px);
+  --visual-top: clamp(112px, 8.8vw, 154px);
+  --visual-height: clamp(220px, 19vw, 338px);
   position: relative;
-  min-height: clamp(560px, 38vw, 760px);
-  margin-left: clamp(-58px, -2.8vw, -28px);
-  padding: clamp(56px, 4.2vw, 84px) clamp(24px, 2.2vw, 44px) clamp(34px, 3vw, 60px);
+  min-height: clamp(540px, 43vw, 720px);
+  margin-left: clamp(-76px, -4.5vw, -44px);
+  width: calc(100% + 42px);
+  padding: clamp(58px, 4.2vw, 82px) clamp(22px, 1.9vw, 36px) clamp(24px, 2.5vw, 48px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   overflow: hidden;
-  clip-path: polygon(18% 0, 100% 0, 82% 100%, 0 100%);
+  clip-path: polygon(var(--clip-left) 0, 100% 0, var(--clip-right-bottom) 100%, 0 100%);
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.42) 42%, rgba(0, 0, 0, 0.88) 100%),
-    var(--card-bg) center / cover no-repeat;
+    linear-gradient(180deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.28) 42%, rgba(0, 0, 0, 0.91) 100%),
+    var(--card-bg) var(--card-bg-position) / cover no-repeat;
   border-right: 1px solid rgba(255, 255, 255, 0.28);
   isolation: isolate;
 }
@@ -220,17 +258,19 @@
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(105deg, rgba(255, 255, 255, 0.14), transparent 14% 84%, rgba(255, 255, 255, 0.08)),
-    radial-gradient(circle at 48% 30%, color-mix(in srgb, var(--card-accent) 38%, transparent), transparent 28%);
+    linear-gradient(106deg, rgba(0, 0, 0, 0.86) 0 7%, transparent 7.6% 78%, rgba(0, 0, 0, 0.62) 78.8% 84%, transparent 84.8%),
+    linear-gradient(106deg, rgba(255, 255, 255, 0.16), transparent 14% 81%, rgba(255, 255, 255, 0.1)),
+    radial-gradient(circle at 48% 31%, rgba(255, 255, 255, 0.14), transparent 29%),
+    linear-gradient(180deg, transparent 0 50%, rgba(0, 0, 0, 0.34));
 }
 
 .product-card::after {
   content: "";
   position: absolute;
   top: 0;
-  left: 15%;
-  width: clamp(68px, 5.8vw, 112px);
-  height: clamp(64px, 5.4vw, 108px);
+  left: var(--tab-left);
+  width: clamp(72px, 5.7vw, 102px);
+  height: clamp(62px, 5.1vw, 92px);
   background: var(--card-accent);
   clip-path: polygon(0 0, 100% 0, 78% 78%, 0 86%);
 }
@@ -238,8 +278,8 @@
 .product-card__number {
   position: absolute;
   z-index: 2;
-  top: clamp(22px, 1.8vw, 36px);
-  left: 25%;
+  top: clamp(22px, 1.65vw, 31px);
+  left: var(--number-left);
   color: #ffffff;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: clamp(26px, 2.05vw, 42px);
@@ -249,14 +289,21 @@
 
 .product-card__number::after {
   content: "\f054";
-  margin-left: clamp(58px, 4.5vw, 94px);
+  position: absolute;
+  top: 0;
+  left: var(--arrow-left);
   color: var(--card-accent);
   font: 900 clamp(18px, 1.45vw, 30px)/1 "Font Awesome 6 Free";
 }
 
 .product-card__visual {
-  min-height: clamp(210px, 16vw, 320px);
-  margin-bottom: clamp(26px, 2vw, 42px);
+  position: absolute;
+  z-index: 1;
+  top: var(--visual-top);
+  left: clamp(18px, 1.8vw, 34px);
+  right: clamp(20px, 2vw, 38px);
+  height: var(--visual-height);
+  margin: 0;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -265,42 +312,44 @@
 
 .product-card__visual img {
   display: block;
-  width: min(96%, 310px);
-  max-height: clamp(220px, 17vw, 340px);
+  width: min(100%, 310px);
+  max-height: clamp(230px, 20vw, 346px);
   object-fit: contain;
   filter: drop-shadow(0 22px 18px rgba(0, 0, 0, 0.62));
   transform: translateX(4%);
 }
 
 .product-card--lubricants .product-card__visual img {
-  width: min(78%, 245px);
-  max-height: clamp(250px, 19vw, 390px);
-  transform: translateX(8%);
+  width: min(86%, 268px);
+  max-height: clamp(270px, 22vw, 382px);
+  transform: translateX(7%);
 }
 
 .product-card--batteries .product-card__visual img {
-  width: min(105%, 350px);
-  max-height: clamp(230px, 18vw, 360px);
-  transform: translateX(2%);
+  width: min(116%, 386px);
+  max-height: clamp(250px, 21vw, 360px);
+  transform: translateX(1%);
 }
 
 .product-card--tyres .product-card__visual img {
-  width: min(112%, 370px);
-  max-height: clamp(220px, 17vw, 350px);
-  transform: translateX(5%);
+  width: min(130%, 426px);
+  max-height: clamp(260px, 22vw, 372px);
+  transform: translateX(13%);
 }
 
 .product-card--autocare .product-card__visual img {
-  width: min(118%, 390px);
-  max-height: clamp(235px, 18vw, 370px);
-  transform: translateX(2%);
+  width: min(138%, 436px);
+  max-height: clamp(260px, 22vw, 378px);
+  transform: translateX(7%);
 }
 
 .product-card h3 {
-  margin: 0 0 clamp(18px, 1.5vw, 28px);
+  position: relative;
+  z-index: 2;
+  margin: 0 0 clamp(16px, 1.25vw, 24px);
   color: #ffffff;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: clamp(31px, 2.3vw, 48px);
+  font-size: clamp(28px, 2.15vw, 42px);
   font-style: italic;
   font-weight: 900;
   line-height: 1.05;
@@ -316,20 +365,25 @@
   display: block;
   width: clamp(44px, 3.1vw, 64px);
   height: 3px;
-  margin-top: clamp(16px, 1.2vw, 24px);
+  margin-top: clamp(14px, 1vw, 18px);
   background: var(--card-accent);
 }
 
 .product-card p {
-  min-height: 106px;
-  margin: 0 0 clamp(24px, 2vw, 42px);
+  position: relative;
+  z-index: 2;
+  min-height: 104px;
+  margin: 0 0 clamp(22px, 1.7vw, 34px);
   color: rgba(255, 255, 255, 0.82);
-  font-size: clamp(12px, 0.86vw, 17px);
+  font-size: clamp(12px, 0.82vw, 15px);
   line-height: 1.52;
 }
 
 .product-card__cta {
-  width: 100%;
+  position: relative;
+  z-index: 2;
+  width: calc(100% - 20px);
+  max-width: 250px;
   min-height: clamp(44px, 3.2vw, 64px);
   padding: 0 clamp(18px, 1.4vw, 28px);
   display: inline-flex;
@@ -342,6 +396,7 @@
   letter-spacing: 0.02em;
   text-decoration: none;
   text-transform: uppercase;
+  clip-path: polygon(0 0, 94% 0, 100% 100%, 0 100%);
 }
 
 .product-card__cta:focus-visible {
@@ -350,8 +405,15 @@
 }
 
 .product-card--batteries {
-  --card-accent: var(--product-yellow);
+  --card-accent: #f4c400;
   --card-bg: url("assets/products-section/batteries-lightning-bg.png");
+  --card-bg-position: center top;
+  --clip-left: 18%;
+  --clip-right-bottom: 84%;
+  --tab-left: 15%;
+  --number-left: 23%;
+  --arrow-left: clamp(62px, 5vw, 96px);
+  --visual-top: clamp(124px, 9.4vw, 170px);
 }
 
 .product-card--batteries .product-card__cta {
@@ -359,21 +421,55 @@
 }
 
 .product-card--tyres {
-  --card-accent: #858585;
+  --card-accent: #5f6265;
   --card-bg: url("assets/products-section/gripp-tyre-road-bg.png");
+  --card-bg-position: center right;
+  --clip-left: 17%;
+  --clip-right-bottom: 83%;
+  --tab-left: 14%;
+  --number-left: 22%;
+  --arrow-left: clamp(64px, 5.1vw, 98px);
+  --visual-top: clamp(118px, 9vw, 162px);
 }
 
 .product-card--autocare {
   --card-accent: var(--product-red);
   --card-bg: url("assets/products-section/auto-care-hex-bg.png");
+  --card-bg-position: right center;
+  --clip-left: 18%;
+  --clip-right-bottom: 86%;
+  --tab-left: 18%;
+  --number-left: 26%;
+  --arrow-left: clamp(58px, 4.7vw, 92px);
+  --visual-top: clamp(132px, 10vw, 184px);
+}
+
+.product-card--lubricants {
+  --card-bg-position: center left;
+  --clip-left: 21%;
+  --clip-right-bottom: 84%;
+  --tab-left: 16%;
+  --number-left: 24%;
+  --visual-top: clamp(126px, 9.7vw, 176px);
+}
+
+.product-card--autocare::before {
+  background:
+    linear-gradient(90deg, transparent 0 74%, rgba(236, 20, 34, 0.2) 74.5% 100%),
+    linear-gradient(106deg, rgba(0, 0, 0, 0.86) 0 7%, transparent 7.6% 78%, rgba(0, 0, 0, 0.72) 78.8% 84%, transparent 84.8%),
+    linear-gradient(106deg, rgba(255, 255, 255, 0.14), transparent 14% 81%, rgba(255, 255, 255, 0.08)),
+    radial-gradient(circle at 48% 31%, rgba(255, 255, 255, 0.14), transparent 29%),
+    linear-gradient(180deg, transparent 0 50%, rgba(0, 0, 0, 0.34));
 }
 
 .products-section__tagline {
   position: absolute;
   z-index: 3;
-  right: clamp(320px, 30vw, 620px);
-  bottom: clamp(26px, 2.5vw, 50px);
+  left: 30.5%;
+  right: 21.5%;
+  bottom: clamp(24px, 2vw, 34px);
   margin: 0;
+  text-align: center;
   color: rgba(255, 255, 255, 0.42);
   font-size: clamp(10px, 0.72vw, 14px);
   letter-spacing: clamp(0.35em, 0.55vw, 0.7em);
@@ -406,7 +502,12 @@
 
   .product-card {
     margin-left: 0;
+    width: 100%;
     clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
+  }
+
+  .product-range-grid::before {
+    display: none;
   }
 
   .products-section__tagline {
