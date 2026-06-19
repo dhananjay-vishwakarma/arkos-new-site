@@ -1,0 +1,195 @@
+.arkos-site-footer {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 0;
+  padding: clamp(40px, 5vw, 72px) clamp(18px, 4vw, 64px) 22px;
+  color: #f8f8f8;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.72)),
+    radial-gradient(circle at 18% 0%, rgba(214, 35, 42, 0.25), transparent 32%),
+    url("assets/footer/arkos-footer-bg-gear-extracted-wide.png?v=footer-speed-20260618-1") left top / cover no-repeat,
+    linear-gradient(135deg, #070707 0%, #161616 54%, #060606 100%);
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.72)),
+    radial-gradient(circle at 18% 0%, rgba(214, 35, 42, 0.25), transparent 32%),
+    image-set(
+      url("assets/footer/arkos-footer-bg-gear-extracted-wide.webp?v=footer-speed-20260618-1") type("image/webp"),
+      url("assets/footer/arkos-footer-bg-gear-extracted-wide.png?v=footer-speed-20260618-1") type("image/png")
+    ) left top / cover no-repeat,
+    linear-gradient(135deg, #070707 0%, #161616 54%, #060606 100%);
+  box-shadow: 0 -10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.arkos-site-footer,
+.arkos-site-footer * {
+  box-sizing: border-box;
+}
+
+.arkos-site-footer__inner {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.95fr) minmax(440px, 2.1fr) minmax(230px, 0.95fr);
+  gap: clamp(28px, 4vw, 56px);
+  width: min(1440px, 100%);
+  margin: 0 auto;
+}
+
+.arkos-site-footer h2,
+.arkos-site-footer h3,
+.arkos-site-footer p {
+  margin: 0;
+}
+
+.arkos-site-footer__brand,
+.arkos-site-footer__contact {
+  min-width: 0;
+}
+
+.arkos-site-footer__logo {
+  display: inline-flex;
+  width: min(148px, 42vw);
+  margin-bottom: 24px;
+}
+
+.arkos-site-footer__logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.arkos-site-footer h2 {
+  margin-bottom: 18px;
+  color: #ffffff;
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.arkos-site-footer h3 {
+  min-height: 2.6em;
+  margin-bottom: 14px;
+  color: #ffd34d;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.arkos-site-footer__brand p,
+.arkos-site-footer__contact,
+.arkos-site-footer__contact a,
+.arkos-site-footer__bottom p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.arkos-site-footer__brand p {
+  max-width: 30rem;
+  font-size: 0.95rem;
+  line-height: 1.72;
+}
+
+.arkos-site-footer__link-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(18px, 2.2vw, 30px);
+}
+
+.arkos-site-footer ul {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.arkos-site-footer a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 160ms ease, opacity 160ms ease;
+}
+
+.arkos-site-footer__link-column a {
+  display: inline-flex;
+  max-width: 100%;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.arkos-site-footer a:hover,
+.arkos-site-footer a:focus-visible {
+  color: #ffffff;
+}
+
+.arkos-site-footer a:focus-visible {
+  outline: 2px solid #ffd34d;
+  outline-offset: 3px;
+}
+
+.arkos-site-footer__contact {
+  font-size: 0.95rem;
+  line-height: 1.58;
+}
+
+.arkos-site-footer__contact address,
+.arkos-site-footer__contact p {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 11px;
+  margin: 0 0 14px;
+  font-style: normal;
+}
+
+.arkos-site-footer__contact i {
+  margin-top: 0.2em;
+  color: #ffd34d;
+}
+
+.arkos-site-footer__bottom {
+  grid-column: 1 / -1;
+  margin-top: clamp(10px, 2vw, 24px);
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  text-align: center;
+}
+
+.arkos-site-footer__bottom p {
+  font-size: 0.9rem;
+}
+
+#footer-mount,
+.arkos-footer-image {
+  display: none !important;
+}
+
+@media (max-width: 1120px) {
+  .arkos-site-footer__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .arkos-site-footer__brand p {
+    max-width: 64rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .arkos-site-footer {
+    padding: 34px 18px 20px;
+  }
+
+  .arkos-site-footer__link-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 460px) {
+  .arkos-site-footer__link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .arkos-site-footer h3 {
+    min-height: 0;
+  }
+}
